@@ -382,6 +382,10 @@ h2 {
   gap: 0.9rem;
 }
 
+.plans-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .steps {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -445,13 +449,78 @@ h2 {
   color: #bad0ff;
 }
 
-.plan-pro {
+.plan-team {
   border-color: rgba(103, 224, 184, 0.55);
 }
 
-.plan-pro .plan-tag {
+.plan-team .plan-tag {
   background: rgba(103, 224, 184, 0.2);
   color: #8bffd7;
+}
+
+.plan-business .plan-tag {
+  background: rgba(255, 179, 109, 0.18);
+  color: #ffd4a0;
+}
+
+.plan-tag--pro {
+  background: rgba(103, 224, 184, 0.2);
+  color: #8bffd7;
+}
+
+.plan-hours {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0.1rem 0 0.8rem;
+}
+
+.plan-enterprise {
+  margin-top: 0.9rem;
+  border: 1px solid rgba(103, 224, 184, 0.55);
+  background: linear-gradient(165deg, rgba(18, 31, 58, 0.94), rgba(14, 24, 46, 0.94));
+  border-radius: 1.25rem;
+  padding: 1.3rem;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.26);
+}
+
+.plan-enterprise-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+.plan-enterprise-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.plan-enterprise-right .plan-hours {
+  text-align: right;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.price-main {
+  font-family: "Sora", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+
+.price-period {
+  font-size: 0.88rem;
+  color: var(--muted);
 }
 
 .plan .btn {
@@ -490,6 +559,29 @@ h2 {
 
 .footer-link:hover {
   color: var(--text);
+}
+
+.contact-deadline {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+  font-size: 0.84rem;
+}
+
+.deadline-label {
+  color: var(--muted);
+}
+
+.deadline-count {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  color: var(--warm);
+  background: rgba(255, 179, 109, 0.1);
+  border: 1px solid rgba(255, 179, 109, 0.28);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
 }
 
 .section-contact {
@@ -782,12 +874,19 @@ h2 {
 @media (max-width: 960px) {
   .hero-grid,
   .plans,
+  .plans-3,
   .steps,
   .shot-grid,
   .gallery-grid,
   .bam-grid-2,
-  .feature-trio {
+  .feature-trio,
+  .plan-enterprise-content {
     grid-template-columns: 1fr;
+  }
+
+  .plan-enterprise-right {
+    align-items: flex-start;
+    white-space: normal;
   }
 
   .bam-controls {
