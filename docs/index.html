@@ -53,6 +53,109 @@
     </header>
 
     <main>
+      <section class="section" id="produkt">
+        <p class="eyebrow">Was du sofort bekommst</p>
+        <h2>Einmal aufnehmen. Alles andere erledigt Aurora.</h2>
+        <p class="lead">Kein Zusammenfassen, kein Strukturieren, kein Nacharbeiten. Scroll und sieh, was in Sekunden entsteht.</p>
+
+        <div class="bam-shell" id="bamShell">
+          <div class="bam-input-row bam-item">
+            <div class="bam-input-chip">
+              <span class="bam-mic-dot"></span>
+              Meeting_Recording.mp3
+            </div>
+            <span class="bam-arrow">&#8594;</span>
+            <span class="bam-processing">Aurora verarbeitet&hellip;</span>
+            <span class="bam-done">Minutes fertig</span>
+          </div>
+
+          <div class="bam-window">
+            <div class="bam-topbar">
+              <span class="bam-brand">Minutes</span>
+              <div class="bam-controls">
+                <button class="bam-ctrl">Minutes bearbeiten</button>
+                <button class="bam-ctrl">Exportieren</button>
+                <button class="bam-ctrl bam-ctrl--primary">Senden</button>
+              </div>
+            </div>
+
+            <div class="bam-content">
+              <div class="bam-card bam-item">
+                <p class="bam-label">Kurzzusammenfassung</p>
+                <p class="bam-text">Im Meeting wurde hauptsaechlich ueber die Freigabe des Budgets und die Auslieferung eines Teststuecks fuer eine akustische Ueberwachung bei Pelletpressen gesprochen. Es gab Updates zum Kooperationsvertrag mit Trofu Realen und organisatorische Details zu Kundenkontakten.</p>
+              </div>
+
+              <div class="bam-grid-2">
+                <div class="bam-card bam-item">
+                  <p class="bam-label">Agenda</p>
+                  <ul class="bam-ul">
+                    <li>Budgetfreigabe und Angebotserstellung</li>
+                    <li>Auslieferung Teststueck akustische Ueberwachung</li>
+                    <li>Kooperationsvertrag mit Trofu Realen</li>
+                    <li>Kundenkontakt und Support-Informationen</li>
+                  </ul>
+                </div>
+                <div class="bam-card bam-item">
+                  <p class="bam-label">Highlights</p>
+                  <ul class="bam-ul">
+                    <li>Techniker sucht akustischen Sensor zur Ueberwachung von Fremdkoerpern in Pelletpressen.</li>
+                    <li>Kooperationsvertrag mit Trofu Realen ist fast finalisiert.</li>
+                    <li>Cross-Selling-Potenzial bei mehreren Werken identifiziert.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bam-grid-2">
+                <div class="bam-card bam-item">
+                  <p class="bam-label">Entscheidungen</p>
+                  <div class="bam-decision">
+                    <strong>Versand der Testbox nach schriftlicher Beauftragung</strong>
+                    <p class="bam-text bam-text--mt">Sobald eine schriftliche Beauftragung vorliegt, wird die Testbox fuer die akustische Ueberwachung der Pelletpressen verschickt.</p>
+                  </div>
+                  <div class="bam-decision">
+                    <strong>Kooperationsvertrag mit Trofu Realen finalisieren</strong>
+                    <p class="bam-text bam-text--mt">Der Kooperationsvertrag ist fast finalisiert &ndash; die korrekte E-Mail-Adresse von Manfred Roessle wird noch geprueft.</p>
+                  </div>
+                </div>
+                <div class="bam-card bam-card--highlight bam-item">
+                  <p class="bam-label">Action Items</p>
+                  <div class="bam-action-item">
+                    <strong>Angebot heute raus schicken und bei schriftlicher Beauftragung die Box versenden.</strong>
+                    <span class="bam-owner">Owner: Vertrieb</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bam-card bam-item">
+                <p class="bam-label">Risiken &amp; offene Punkte</p>
+                <ul class="bam-ul">
+                  <li>Verzoegerung durch fehlende digitale Signaturen &ndash; Dokumente muessen ausgedruckt und unterschrieben zurueckgeschickt werden.</li>
+                  <li>Moegliche Verzoegerung bei der Auslieferung, wenn der Kunde bis Anfang Dezember wartet statt sofort zu bestellen.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-trio">
+          <div class="feature-trio-card bam-item">
+            <div class="feature-trio-num">01</div>
+            <h3>Bearbeiten</h3>
+            <p>Jeden Abschnitt anpassen, ergaenzen oder kuerzen &ndash; direkt im Browser, bevor die Minutes rausgehen.</p>
+          </div>
+          <div class="feature-trio-card bam-item">
+            <div class="feature-trio-num">02</div>
+            <h3>Exportieren</h3>
+            <p>Fertige Minutes als PDF oder Word-Dokument herunterladen &ndash; in Sekunden, ohne Extraschritte.</p>
+          </div>
+          <div class="feature-trio-card bam-item">
+            <div class="feature-trio-num">03</div>
+            <h3>Direkt senden</h3>
+            <p>Per E-Mail an Einzelpersonen oder den kompletten Verteiler verschicken &ndash; ohne Umweg ueber dein Mailprogramm.</p>
+          </div>
+        </div>
+      </section>
+
       <section class="section reveal" id="impressionen">
         <p class="eyebrow">Das Problem &amp; die Loesung</p>
         <h2>Warum Meetings scheitern — und wie Aurora das aendert.</h2>
@@ -235,6 +338,25 @@
         { threshold: 0.15 }
       );
       reveals.forEach((el) => io.observe(el));
+
+      const bamShell = document.getElementById('bamShell');
+      if (bamShell) {
+        const produktSection = document.getElementById('produkt');
+        const bamItems = produktSection.querySelectorAll('.bam-item');
+        const bamObs = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              bamItems.forEach((el, i) => {
+                setTimeout(() => el.classList.add('bam-visible'), i * 160);
+              });
+              bamObs.unobserve(bamShell);
+            }
+          },
+          { threshold: 0.08 }
+        );
+        bamObs.observe(bamShell);
+      }
+
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </body>
