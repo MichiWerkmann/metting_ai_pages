@@ -22,7 +22,7 @@
 
     <div class="pilot-banner">
       <span class="pilot-dot"></span>
-      Wir suchen <strong>10 Pilotpartner</strong> — kostenlose Einrichtung, persönliche Begleitung, kein Risiko.
+      Pilotangebot: <strong>5 Stunden gratis</strong> — endet in <strong id="countdown"></strong>
       <a href="#kontakt">Jetzt bewerben &rarr;</a>
     </div>
 
@@ -257,15 +257,20 @@
           <article class="plan plan-basic">
             <p class="plan-tag">Basic</p>
             <h3>Schnell produktiv mit Azure</h3>
+            <div class="plan-price">
+              <span class="price-main">49 €</span>
+              <span class="price-period">/ Monat</span>
+            </div>
             <p class="plan-copy">
               Ideal für Teams, die sofort starten wollen: Azure-Anbindung plus
               einfache Windows-Installation. In einem Tag einsatzbereit.
             </p>
             <ul>
+              <li><strong>15 Stunden</strong> Meeting-Audio inkl.</li>
+              <li>Danach: 4 €/Stunde — transparent, keine Überraschungen</li>
               <li>Azure-Anbindung für KI-Services</li>
               <li>Einfache Installation unter Windows</li>
               <li>Kurze Einführungszeit für Fachabteilungen</li>
-              <li>Perfekt für schnellen Rollout</li>
             </ul>
             <a class="btn btn-primary" href="#kontakt">Basic anfragen</a>
           </article>
@@ -273,36 +278,47 @@
           <article class="plan plan-pro">
             <p class="plan-tag">Pro</p>
             <h3>Maximale Kontrolle — komplett lokal</h3>
+            <div class="plan-price">
+              <span class="price-main">690 €</span>
+              <span class="price-period">Einmalig</span>
+            </div>
             <p class="plan-copy">
               Für Unternehmen mit hohen Compliance-Anforderungen: alles lokal,
-              containerisiert mit Docker. Keine Daten verlassen dein Netzwerk.
+              containerisiert mit Docker. Keine Daten verlassen dein Netzwerk —
+              keine laufenden Azure-Kosten.
             </p>
             <ul>
-              <li>Vollständig lokale Verarbeitung</li>
-              <li>Deployment mit Docker</li>
-              <li>Keine externe Cloud-Anbindung notwendig</li>
+              <li><strong>Unbegrenzte</strong> Meeting-Stunden</li>
+              <li>Keine Azure-Kosten — läuft auf deiner Hardware</li>
+              <li>Vollständig lokale Verarbeitung mit Docker</li>
               <li>DSGVO-konform by design</li>
+              <li>Optional: Support &amp; Updates für 49 €/Monat</li>
             </ul>
             <a class="btn btn-primary" href="#kontakt">Pro anfragen</a>
           </article>
         </div>
 
-        <p class="plans-note">Beide Pakete: keine Abonnementgebühr, keine Mindestlaufzeit. Preise auf Anfrage — transparente Einmalkosten oder Projektbasis.</p>
       </section>
 
       <!-- KONTAKT -->
       <section class="section section-contact reveal" id="kontakt">
-        <p class="eyebrow">Pilotprogramm</p>
+        <p class="eyebrow">Pilotprogramm — läuft ab 31. August 2026</p>
         <h2>Werde einer von 10 Pilotpartnern.</h2>
         <p>
           Wir suchen Teams, die Aurora AI als erste einsetzen wollen.
-          Du bekommst die volle Einrichtung, persönliche Begleitung und
-          direkten Draht zum Entwickler. Kein Risiko, keine versteckten Kosten.
+          Du startest mit <strong>5 Stunden Meeting-Audio kostenlos</strong> — danach
+          transparent und fair nach Verbrauch. Volle Einrichtung, persönliche
+          Begleitung, direkter Draht zum Entwickler.
         </p>
         <div class="contact-perks">
+          <span class="perk">5 Stunden gratis zum Start</span>
           <span class="perk">Kostenlose Einrichtung</span>
           <span class="perk">Persönliches Onboarding</span>
           <span class="perk">Direkter Feedback-Kanal</span>
+        </div>
+        <div class="contact-deadline">
+          <span class="deadline-label">Angebot endet in</span>
+          <span class="deadline-count" id="countdown2"></span>
         </div>
         <a class="btn btn-primary" href="mailto:kontakt@aurora-ai.de">Jetzt Kontakt aufnehmen</a>
       </section>
@@ -341,6 +357,29 @@
       });
 
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      function updateCountdown() {
+        const deadline = new Date('2026-08-31T23:59:59');
+        const now = new Date();
+        const diff = deadline - now;
+        if (diff <= 0) {
+          ['countdown', 'countdown2'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = 'abgelaufen';
+          });
+          return;
+        }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const text = d + ' Tagen ' + h + ' Std. ' + m + ' Min.';
+        ['countdown', 'countdown2'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = text;
+        });
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 30000);
     </script>
   </body>
 </html>
