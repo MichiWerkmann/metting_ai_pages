@@ -413,10 +413,6 @@ h2 {
   margin-top: 0.55rem;
 }
 
-.plans {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .plan {
   padding: 1.3rem;
   position: relative;
@@ -593,6 +589,149 @@ h2 {
   padding: 1.2rem 4vw 2rem;
   text-align: center;
   color: var(--muted);
+}
+
+/* ── TRUST / DATENSCHUTZ ──────────────────────────────── */
+
+.trust-grid {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.trust-card {
+  border: 1px solid var(--line);
+  background: linear-gradient(165deg, rgba(18, 31, 58, 0.96), rgba(14, 24, 46, 0.96));
+  border-radius: 1.25rem;
+  padding: 1.6rem 1.4rem;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.trust-card--eu {
+  border-color: rgba(0, 51, 153, 0.7);
+  background: linear-gradient(165deg, rgba(0, 20, 80, 0.6), rgba(14, 24, 46, 0.97));
+}
+
+.trust-card--local {
+  border-color: rgba(103, 224, 184, 0.4);
+  background: linear-gradient(165deg, rgba(10, 30, 40, 0.7), rgba(14, 24, 46, 0.97));
+}
+
+.trust-icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0 0.5rem;
+}
+
+.trust-svg {
+  width: 64px;
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(103, 224, 184, 0.25));
+}
+
+.trust-svg--flag {
+  width: 90px;
+  filter: drop-shadow(0 4px 20px rgba(0, 51, 153, 0.6));
+  border-radius: 5px;
+}
+
+.trust-card h3 {
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+.trust-card p {
+  color: var(--muted);
+  font-size: 0.87rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.trust-list {
+  margin: 0.3rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.trust-list li {
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.trust-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* local diagram */
+.local-diagram {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.local-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.local-label {
+  font-size: 0.7rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.local-label--blocked {
+  color: #ff6b6b;
+}
+
+.local-arrow-line {
+  display: flex;
+  align-items: center;
+  color: var(--accent);
+  gap: 0;
+  opacity: 0.7;
+}
+
+.local-arrow-shaft {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.7;
+}
+
+.local-arrow-tip {
+  font-size: 0.7rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-left: -1px;
+}
+
+.local-blocked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  opacity: 0.8;
 }
 
 /* ── BAM SHOWCASE ─────────────────────────────────────── */
@@ -875,6 +1014,7 @@ h2 {
   .hero-grid,
   .plans,
   .plans-3,
+  .trust-grid,
   .steps,
   .shot-grid,
   .gallery-grid,

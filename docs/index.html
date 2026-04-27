@@ -70,6 +70,106 @@
 
     <main>
 
+      <!-- DATENSCHUTZ -->
+      <section class="section reveal" id="datenschutz">
+        <p class="eyebrow">Datenschutz & Sicherheit</p>
+        <h2>Deine Daten gehören dir. Nicht uns. Nicht der Cloud.</h2>
+        <p class="lead">Das größte Problem bei KI-Meeting-Tools: Deine Gespräche landen auf US-Servern. Bei Aurora nicht.</p>
+
+        <div class="trust-grid">
+
+          <div class="trust-card">
+            <div class="trust-icon-wrap">
+              <svg class="trust-svg" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 2L4 10v18c0 13 8.5 24.5 20 28 11.5-3.5 20-15 20-28V10L24 2z" fill="rgba(103,224,184,0.12)" stroke="#67e0b8" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M15 28l7 7 11-13" stroke="#67e0b8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>DSGVO-konform</h3>
+            <p>Aurora wurde für den europäischen Datenschutz entwickelt. Keine versteckten Datenflüsse, keine Weitergabe an Dritte, vollständige Transparenz.</p>
+            <ul class="trust-list">
+              <li>Kein Verkauf von Gesprächsdaten</li>
+              <li>Löschung auf Anfrage jederzeit</li>
+              <li>Verarbeitungsverzeichnis auf Anfrage</li>
+            </ul>
+          </div>
+
+          <div class="trust-card trust-card--eu">
+            <div class="trust-icon-wrap">
+              <svg class="trust-svg trust-svg--flag" viewBox="0 0 90 60" xmlns="http://www.w3.org/2000/svg">
+                <rect width="90" height="60" rx="5" fill="#003399"/>
+                <g fill="#FFCC00" font-size="7.5" text-anchor="middle" font-family="serif">
+                  <text x="45" y="14">&#9733;</text>
+                  <text x="54.5" y="16.8">&#9733;</text>
+                  <text x="61.2" y="24">&#9733;</text>
+                  <text x="63" y="33">&#9733;</text>
+                  <text x="61.2" y="42">&#9733;</text>
+                  <text x="54.5" y="49.2">&#9733;</text>
+                  <text x="45" y="52">&#9733;</text>
+                  <text x="35.5" y="49.2">&#9733;</text>
+                  <text x="28.8" y="42">&#9733;</text>
+                  <text x="27" y="33">&#9733;</text>
+                  <text x="28.8" y="24">&#9733;</text>
+                  <text x="35.5" y="16.8">&#9733;</text>
+                </g>
+              </svg>
+            </div>
+            <h3>Verarbeitung in der EU</h3>
+            <p>Beim Basic-Paket läuft die KI ausschließlich über <strong>Azure-Rechenzentren in Europa</strong>. Deine Meeting-Daten verlassen nie die EU.</p>
+            <ul class="trust-list">
+              <li>Azure Region: West Europe / North Europe</li>
+              <li>Kein Datentransfer in die USA</li>
+              <li>EU-Standardvertragsklauseln</li>
+            </ul>
+          </div>
+
+          <div class="trust-card trust-card--local">
+            <div class="trust-icon-wrap">
+              <div class="local-diagram">
+                <div class="local-node">
+                  <svg viewBox="0 0 32 24" fill="none" width="36">
+                    <rect x="1" y="1" width="30" height="18" rx="2" stroke="#67e0b8" stroke-width="1.5" fill="rgba(103,224,184,0.08)"/>
+                    <rect x="8" y="19" width="16" height="2" rx="1" fill="#67e0b8" opacity=".5"/>
+                    <rect x="4" y="4" width="24" height="11" rx="1" fill="rgba(103,224,184,0.15)"/>
+                  </svg>
+                  <span class="local-label">Meeting</span>
+                </div>
+                <div class="local-arrow-line">
+                  <span class="local-arrow-shaft"></span>
+                  <span class="local-arrow-tip">&#9658;</span>
+                </div>
+                <div class="local-node">
+                  <svg viewBox="0 0 28 36" fill="none" width="30">
+                    <rect x="1" y="1" width="26" height="34" rx="3" stroke="#67e0b8" stroke-width="1.5" fill="rgba(103,224,184,0.08)"/>
+                    <rect x="5" y="6" width="18" height="3" rx="1" fill="#67e0b8" opacity=".6"/>
+                    <rect x="5" y="12" width="18" height="3" rx="1" fill="#67e0b8" opacity=".4"/>
+                    <rect x="5" y="18" width="18" height="3" rx="1" fill="#67e0b8" opacity=".25"/>
+                    <circle cx="21" cy="7.5" r="1.5" fill="#67e0b8"/>
+                    <circle cx="21" cy="13.5" r="1.5" fill="#67e0b8" opacity=".5"/>
+                  </svg>
+                  <span class="local-label">Ihr Server</span>
+                </div>
+                <div class="local-blocked">
+                  <svg viewBox="0 0 32 24" fill="none" width="32">
+                    <path d="M6 14c0-5.5 4-9 10-9s10 3.5 10 9" stroke="#ff5f5f" stroke-width="1.5" opacity=".5"/>
+                    <path d="M4 18h24M4 10l24 12" stroke="#ff5f5f" stroke-width="1.5" stroke-linecap="round" opacity=".6"/>
+                  </svg>
+                  <span class="local-label local-label--blocked">Kein Cloud-Zugriff</span>
+                </div>
+              </div>
+            </div>
+            <h3>100% lokal möglich</h3>
+            <p>Pro-Paket: Keine Cloud, kein Internet, keine Abhängigkeit. Alles läuft auf <strong>deiner eigenen Hardware in deinem Netzwerk</strong>.</p>
+            <ul class="trust-list">
+              <li>Deployment per Docker — vollständig isoliert</li>
+              <li>Kein einziges Byte verlässt dein Netzwerk</li>
+              <li>Ideal für Produktion, Recht, Gesundheit</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
       <!-- PROBLEM -->
       <section class="section reveal" id="problem">
         <p class="eyebrow">Das Problem</p>
